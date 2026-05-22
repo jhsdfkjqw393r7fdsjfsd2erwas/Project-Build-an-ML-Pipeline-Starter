@@ -58,42 +58,42 @@ if __name__ == "__main__":
     parser.add_argument(
         "--input_artifact", 
         type = str,
-        help = "Fully-qualified name for the input artifact",
+        help = "Initial artifact to be cleaned",
         required = True
     )
 
     parser.add_argument(
         "--output_artifact", 
         type = str,
-        help = "Name for the W&B artifact that will be created",
+        help = "Output artifact for cleaned data",
         required = True
     )
 
     parser.add_argument(
         "--output_type", 
         type = str,
-        help = "Type of the artifact to create",
+        help = "Type of the output dataset",
         required = True
     )
 
     parser.add_argument(
         "--output_description", 
         type = str,
-        help = "Description for the artifact",
+        help = "Description of the output dataset",
         required = True
     )
 
     parser.add_argument(
         "--min_price", 
-        type = int,
-        help = "Lower price threshold to be included in dataset",
+        type = float,
+        help = "Minimum house price to be considered",
         required = True
     )
 
     parser.add_argument(
         "--max_price",
-        type = int,
-        help = "Upper price threshold to be included in dataset",
+        type = float,
+        help = "Maximum house price to be considered",
         required = True
     )
 
