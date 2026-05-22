@@ -73,8 +73,8 @@ def go(config: DictConfig):
                     "csv": "clean_sample.csv:latest",
                     "ref": "clean_sample.csv:reference",
                     "kl_threshold": config["data_check"]["kl_threshold"],
-                    "min_price": config["basic_cleaning"]["min_price"],
-                    "max_price": config["basic_cleaning"]["max_price"]
+                    "min_price": config["etl"]["min_price"],
+                    "max_price": config["etl"]["max_price"]
                 }
             )
 
