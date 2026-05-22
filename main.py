@@ -55,12 +55,12 @@ def go(config: DictConfig):
                 os.path.join(hydra.utils.get_original_cwd(), "src", "basic_cleaning"),
                 entry_point="main",
                 parameters={
-                    "input_artifact": config["main"]["input_artifact"],
+                    "input_artifact": "sample.csv:latest",
                     "output_artifact": "clean_sample.csv",
                     "output_type": "clean_data",
                     "output_description": "Raw data with price outliers removed and date formatted",
-                    "min_price": config["basic_cleaning"]["min_price"],
-                    "max_price": config["basic_cleaning"]["max_price"]
+                    "min_price": config["etl"]["min_price"],
+                    "max_price": config["etl"]["max_price"]
                 }
             )
 
