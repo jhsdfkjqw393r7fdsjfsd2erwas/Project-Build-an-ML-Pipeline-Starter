@@ -1,7 +1,7 @@
 # Link to W&B project
 https://wandb.ai/ashdasdfew-udacity/nyc_airbnb/overview/details
 
-# Link to Githhub project
+# Link to Github project
 https://github.com/jhsdfkjqw393r7fdsjfsd2erwas/Project-Build-an-ML-Pipeline-Starter
 
 
