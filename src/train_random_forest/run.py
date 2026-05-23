@@ -129,6 +129,7 @@ def go(args):
           "feature_importance": wandb.Image(fig_feat_imp),
         }
     )
+    run.finish()
 
 
 def plot_feature_importance(pipe, feat_names):
@@ -191,7 +192,7 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
     )
 
     # Some minimal NLP for the "name" column
-    reshape_to_1d = FunctionTransformer(np.reshape, kw_args={"newshape": -1})
+    reshape_to_1d = FunctionTransformer(np.reshape, kw_args={"shape": -1})
     name_tfidf = make_pipeline(
         SimpleImputer(strategy="constant", fill_value=""),
         reshape_to_1d,
@@ -227,8 +228,8 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
 
     sk_pipe = Pipeline(
         steps =[
-        ("preprocessor", preprocessor),
-        ("random_forest", RandomForestRegressor(**rf_config))
+            ("preprocessor", preprocessor),
+            ("random_forest", RandomForestRegressor(**rf_config))
         ]
     )
 
